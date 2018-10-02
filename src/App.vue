@@ -5,7 +5,7 @@
         <h3>Schedule a Mammogram</h3>
       </b-row>
       <b-row>
-        <b-col class="col-8">
+        <b-col class="col-9">
           <router-view/>
         </b-col>
       </b-row>
