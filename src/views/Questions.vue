@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="py-5 my-5">
     <b-container v-if="show(i)" v-for="(Question, i) in Questions" :key="Question">
       <b-form-group>
           <b-row>
@@ -49,10 +49,7 @@ export default {
         if(this.Answers[2]=='No' && this.Answers[3]==''){ return true;}
         else { return false;}
       }
-    },
-  },
-  components: {
-   
-  }
-}
+    }//SHOW
+  },//METHODS
+}//EXPORT
 </script>
