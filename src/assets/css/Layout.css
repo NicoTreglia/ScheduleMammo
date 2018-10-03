@@ -1,24 +1,6 @@
-<template>
-  <div id="app">
-    <div class="site-wrapper">
-    <div class="site-wrapper-inner"> 
-      <b-row class="p-4">
-        <h3>Schedule a Mammogram</h3>
-      </b-row>
-      <b-row class="align-items-center">
-        <b-col class="col-9">
-          <router-view/>
-        </b-col>
-      </b-row>
-    </div>
-    </div>
-  </div>
-</template>
-
-<style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    /* background: url("../images/bg.jpg") no-repeat; */
+    background: url("../images/bg.jpg") no-repeat;
     background-size:cover;
     background-position:center;
     color: #333333;  
@@ -72,7 +54,9 @@ body {
 }
 @media (max-width: 767px) {
 	p.lead {font-size:14px;}
-  .cover-heading {font-size:24px;}
+   .cover-heading {
+	   font-size:24px;
+	}
 }
 @media (min-width: 62em) {
     .masthead,
@@ -102,4 +86,3 @@ body {
     font-size: 18px;
     font-weight: 100;
 }
-</style>

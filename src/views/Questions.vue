@@ -1,11 +1,14 @@
 <template>
-  <b-container class="py-5 my-5">
+  <b-container>
     <b-container v-if="show(i)" v-for="(Question, i) in Questions" :key="Question">
       <b-form-group>
-          <b-row>
+          <b-row class="p-4">
+            <p>{{Prompt}}</p>
+          </b-row>
+          <b-row class="p-4 border-top border-secondary">
             <p>{{Question}}</p>
           </b-row>
-          <b-row>
+          <b-row class="p-4 border-bottom border-secondary">
             <b-form-radio-group v-model="Answers[i]">
               <b-form-radio value="Yes">Yes</b-form-radio>
               <b-form-radio value="No">No</b-form-radio>
@@ -22,6 +25,7 @@ export default {
   name: 'home', 
   data(){
     return {
+      Prompt: "Please answer a few questions before scheduling an appointment:",
       Answers: ['','','',''],
       DoesShow: [],
       topMessage:"Head Question",
