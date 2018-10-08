@@ -1,10 +1,12 @@
 <template>
-  <div id="app" style="height:'100%'">
+  <div id="app">
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <b-row class="py-5">
-            <h3>Schedule a Mammogram</h3>
+            <b-col class="pl-5 col-9">
+              <h2 class="cover-heading">Schedule a Mammogram</h2>
+            </b-col>
           </b-row>
           <row class="py-5">
             <b-col class="col-9">
@@ -18,14 +20,19 @@
 </template>
 
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: url("assets/bg.jpg") no-repeat;
-  background-size:cover;
-  /* background-position:center; */
-  color: #333333;  
-}
   /* Extra markup and styles for table-esque vertical and horizontal centering */
+  /* html{
+    background: #dacdbc;
+  } */
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("assets/bg.jpg") no-repeat fixed;
+  background-size:cover;
+  color: #333333;  
+  height: 100%;
+  width: 100%;
+}
+
 .site-wrapper {
   display: table;
   width: 100%;

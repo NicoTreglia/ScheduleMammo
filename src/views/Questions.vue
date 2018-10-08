@@ -3,10 +3,10 @@
     <b-container v-if="show(i)" v-for="(Question, i) in Questions" :key="Question">
       <b-form-group>
           <b-row class="p-4">
-            <p>{{Prompt}}</p>
+            <h5 class="cover-heading">{{Prompt}}</h5>
           </b-row>
-          <b-row class="p-4 border-top border-secondary">
-            <p>{{Question}}</p>
+          <b-row class="p-4 border-top border-secondary cover-heading">
+            <h5>{{Question}}</h5>
           </b-row>
           <b-row class="p-4 border-bottom border-secondary">
             <b-form-radio-group v-model="Answers[i]">

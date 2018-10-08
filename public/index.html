@@ -14,4 +14,49 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <footer class="mastfoot">
+    <div class="inner">
+      <img src="ynhhs_footer_logo.png" />
+      <p style="float:right;">© Copyright 2017 Yale New Haven Health System.&nbsp;<br/>All Rights Reserved.</p>
+    </div>
+  </footer>
 </html>
+<style>
+.mastfoot {
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left:0; 
+    background-color: #00a9e0;
+    width: 100%;
+    font-size: 12px;
+}
+@media (min-width: 40em) {
+    /* Pulls out footer */
+    .mastfoot {
+      bottom: 0;
+      left:0; 
+      background-color: #00a9e0;
+      font-size: 12px;
+      color: #ffffff;
+    }
+}
+@media (max-width: 767px) {
+  footer {
+	visibility: hidden;
+  }
+}
+@media (min-width: 62em) {
+    .mastfoot {
+      max-width: 100%; 
+      background-color: #00a9e0;
+    }
+}
+.mastfoot .inner{
+    max-width: 970px !important; 
+    margin-right: auto;
+    margin-left: auto;
+    font-size:12px;
+    color:#ffffff;
+}
+</style>
