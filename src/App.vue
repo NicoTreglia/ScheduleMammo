@@ -8,11 +8,11 @@
               <h2 class="cover-heading">Schedule a Mammogram</h2>
             </b-col>
           </b-row>
-          <row class="py-5">
+          <b-row class="py-5">
             <b-col class="col-9">
               <router-view/>
             </b-col>
-          </row>
+          </b-row>
         </div>
       </div>
     </div>

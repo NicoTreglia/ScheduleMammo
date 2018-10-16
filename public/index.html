@@ -11,8 +11,9 @@
     <noscript>
       <strong>We're sorry but schmm doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="contain">
+      <div id="app"></div>
+    </div><!-- built files will be auto injected -->
   </body>
   <footer class="mastfoot">
     <div class="inner">
@@ -22,14 +23,28 @@
   </footer>
 </html>
 <style>
+html, body{
+  height: 100%;
+}
+#contain {
+  min-height: 100%;
+}
+#app{
+  overflow: auto;
+  padding-bottom: 50px;
+}
 .mastfoot {
     color: #ffffff;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left:0; 
     background-color: #00a9e0;
     width: 100%;
     font-size: 12px;
+    height: 125px;
+    margin-top: -75px;
+    padding-top: -50px;
+    clear: both;
 }
 @media (min-width: 40em) {
     /* Pulls out footer */

@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <b-container v-if="show(i)" v-for="(Question, i) in Questions" :key="Question">
+    <b-container v-if="showNextQuestion(i)" v-for="(Question, i) in Questions" :key="Question">
       <b-form-group>
           <b-row class="p-4">
             <h5 class="cover-heading">{{Prompt}}</h5>
@@ -27,6 +27,7 @@ export default {
     return {
       Prompt: "Please answer a few questions before scheduling an appointment:",
       Answers: ['','','',''],
+      Correct: ['Yes','Yes','No','No'],
       DoesShow: [],
       topMessage:"Head Question",
       Questions: ["Do you have a current referring provider your results can be sent to?",
@@ -36,11 +37,11 @@ export default {
     }//RETURN
   },//DATA
   methods: {
-    show(i) {
+    showNextQuestion(i) {
       if(i==0){
         if(this.Answers[i]==''){return true;}
         else { return false;}
-      }
+        }
       else if(i==1){
         if(this.Answers[0]=='Yes' && this.Answers[1]==''){ return true;}
         else { return false;}
@@ -51,9 +52,15 @@ export default {
       }
       else if(i==3){
         if(this.Answers[2]=='No' && this.Answers[3]==''){ return true;}
-        else { return false;}
       }
-    }//SHOW
+        else { 
+          this.$router.push({path: '/Locations'})
+          return false;
+      }
+    },//SHOWNEXTQUESTION
+    // showHelpPage(i) {
+    //   if(Answers[i]!=Correct[i])
+    // }//SHOWHELPPAGE
   },//METHODS
 }//EXPORT
 </script>
