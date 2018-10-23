@@ -51,7 +51,7 @@ export default {
         {adr:'TRUMBULL: 5520 Park Avenue, Trumbull, CT, 06611',url:'dept=103190303&vt=1057341'},
         {adr:'WATERFORD: 196 Parkway South, Suite 102, Waterford, CT 06385-1234',url:'dept=108030002&vt=1059875'},
         {adr:'WESTERLY(RI): 25 Wells St, Westerly, RI, 02891-2961',url:'dept=108710024&vt=1059875'}],
-        OSraw:"<link href='epicmychart1p.ynhh.org/MyChart-PRD/Content/EmbeddedWidget.css' rel='stylesheet' type='text/css'> <scr" + "ipt src='https://mychart.ynhhs.org/MyChart-PRD/Content/EmbeddedWidgetController.js' type='text/javascript'>" + "</scr" + "ipt><scr" + "ipt type='text/javascript'> var EWC = new EmbeddedWidgetController({'hostname': 'https://mychart.ynhhs.org/MyChart-PRD/','matchMediaString': '(max-width: 747px)' });</scr" + "ipt>"
+        OSraw:"<link href='http://epicmychart1p.ynhh.org/MyChart-PRD/Content/EmbeddedWidget.css' rel='stylesheet' type='text/css'> <scr" + "ipt src='https://mychart.ynhhs.org/MyChart-PRD/Content/EmbeddedWidgetController.js' type='text/javascript'>" + "</scr" + "ipt><scr" + "ipt type='text/javascript'> var EWC = new EmbeddedWidgetController({'hostname': 'https://mychart.ynhhs.org/MyChart-PRD/','matchMediaString': '(max-width: 747px)' });</scr" + "ipt>"
         }//RETURN
     },//DATA
     computed: {
