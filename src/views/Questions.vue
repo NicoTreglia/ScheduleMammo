@@ -17,12 +17,14 @@
       </b-form-group>
       </b-container>
       <b-container v-else-if="showLocation()"/>
-      <!-- <b-container v-else-if="showHelp()"/> -->
-      <!-- <b-container v-else>{{$router.push({path: '/Help'})}}</b-container> -->
+      <b-container v-if="ShowPicker==1">
+        <locations/>
+      </b-container>
   </b-container>
 </template>
 
 <script>
+import Locations from "@/Components/Locations.vue"
 
 export default {
   name: 'home', 
@@ -32,6 +34,7 @@ export default {
       Answers: ['','','',''],
       Correct: ['Yes','Yes','No','No'],
       DoesShow: [],
+      ShowPicker: 0,
       topMessage:"Head Question",
       Questions: ["Do you have a current referring provider your results can be sent to?",
       "Was your last screening more than 1 year ago from today?",
@@ -39,6 +42,9 @@ export default {
       "Have you had a dense breast ultrasound in the last year or in the past?"]
     }//RETURN
   },//DATA
+  components:{
+    Locations
+  },
   methods: {
     showNextQuestion(i) {
       if(i==0){if(this.Answers[i]==''){return true;}}
@@ -47,7 +53,7 @@ export default {
       else if(i==3){if(this.Answers[2]=='No' && this.Answers[3]==''){ return true;}}
     },//SHOWNEXTQUESTION
     showLocation(){
-      if(this.Answers[3]==this.Correct[3]) {this.$router.push({path: '/Locations'})}
+      if(this.Answers[3]==this.Correct[3]) {this.ShowPicker = 1 }
       else if(this.Answers[0]!=this.Correct[0] && this.Answers[0] != '') {this.$router.push({path: '/Help'})}
       else if(this.Answers[1]!=this.Correct[1] && this.Answers[1] != '') {this.$router.push({path: '/Help'})}
       else if(this.Answers[2]!=this.Correct[2] && this.Answers[2] != '') {this.$router.push({path: '/Help'})}
