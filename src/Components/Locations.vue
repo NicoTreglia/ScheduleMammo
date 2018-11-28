@@ -1,31 +1,35 @@
 <template>
     <b-container v-if="State==''">
-            <b-row class="p-4">
-                <h5 class="cover-heading">{{Prompt}}</h5>
-            </b-row>
-            <b-row class="p-4 border-top border-secondary cover-heading">
-                <h5 style="line-height: 2;">{{Directions}}</h5>
-            </b-row>
-            <b-row>
-                <b-form-select v-model="State" :options="Locs">
-                    <option disabled value="">Please select one</option>
-                    <!-- <option v-for="(Loc,i) in Locs" :key="Loc.key">{{i+1}}) {{Loc.adr}}</option> -->
-                </b-form-select>    
-            </b-row>
+    <!--This container will show if a location is not selected yet-->
+        <b-row class="p-4">
+            <h5 class="cover-heading">{{Prompt}}</h5>
+        </b-row>
+        <b-row class="p-4 border-top border-secondary cover-heading">
+            <h5 style="line-height: 2;">{{Directions}}</h5>
+        </b-row>
+        <b-row>
+            <!--Displays every options in Locs list-->
+            <b-form-select v-model="State" :options="Locs">
+                <!--Default option defined-->
+                <option disabled value="">Please select one</option>
+            </b-form-select>    
+        </b-row>
     </b-container>
     <b-container v-else>
-            <b-row class="p-4">
-                <h5 class="cover-heading">{{Prompt}}</h5>
-            </b-row>
-            <b-row class="p-4 border-top border-secondary cover-heading">
-                <b-button class="btn-success" @click="State=''"><h5>Select A Different Location</h5></b-button>
-            </b-row>
-            <b-row>
-                <div id="scheduleContainer">
-                    <iframe id="openSchedulingFrame" class="embed-responsive" :src="OP"></iframe>
-                    <span v-html="OSraw"/>
-                </div>
-            </b-row>       
+    <!--This container will show if a location has been selected-->
+        <b-row class="p-4">
+            <h5 class="cover-heading">{{Prompt}}</h5>
+        </b-row>
+        <b-row class="p-4 border-top border-secondary cover-heading">
+            <!--Will bring user back to selecting a location-->
+            <b-button class="btn-success" @click="State=''"><h5>Select A Different Location</h5></b-button>
+        </b-row>
+        <b-row>
+            <div id="scheduleContainer">
+                <iframe id="openSchedulingFrame" class="embed-responsive" :src="OP"></iframe>
+                <span v-html="OSraw"/>
+            </div>
+        </b-row>       
     </b-container>
 </template>
 
@@ -52,6 +56,7 @@ export default {
         {text:'TRUMBULL: 5520 Park Avenue, Trumbull, CT, 06611',value:'dept=103190303&vt=1057341'},
         {text:'WATERFORD: 196 Parkway South, Suite 102, Waterford, CT 06385-1234',value:'dept=108030002&vt=1059875'},
         {text:'WESTERLY(RI): 25 Wells St, Westerly, RI, 02891-2961',value:'dept=108710024&vt=1059875'}],
+        //OSraw holds all code to link to Epic Widget
         OSraw:"<link href='http://epicmychart2vt.ynhh.org/mychartPOC/Content/EmbeddedWidget.css' rel='stylesheet' type='text/css'> <scr" + "ipt src='https://epicmychart2vt.ynhh.org/MyChartPOC/Content/EmbeddedWidgetController.js' type='text/javascript'>" + "</scr" + "ipt><scr" + "ipt type='text/javascript'> var EWC = new EmbeddedWidgetController({'hostname': 'https://epicmychart2vt.ynhh.org/mychartPOC','matchMediaString': '(max-width: 747px)' });</scr" + "ipt>"
         }//RETURN
     },//DATA

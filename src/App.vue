@@ -1,4 +1,5 @@
 <template>
+  <!--THE SHELL FOR THE ENTIRE SITE LIVES WITHIN THE APP DIV-->
   <div id="app">
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
@@ -10,6 +11,7 @@
           </b-row>
           <b-row class="py-5">
             <b-col class="col-9">
+              <!--router-view will control which view is displays...Help or Questions-->
               <router-view/>
             </b-col>
           </b-row>

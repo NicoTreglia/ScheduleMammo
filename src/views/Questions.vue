@@ -24,6 +24,8 @@
 </template>
 
 <script>
+/*Loads in locations component that houses 
+the Open Scheduling locations picker and widget*/
 import Locations from "@/Components/Locations.vue"
 
 export default {
@@ -36,23 +38,26 @@ export default {
       DoesShow: [],
       ShowPicker: 0,
       topMessage:"Head Question",
+      /*List of questions the program will ask, 
+      the logic for the answering to this question is found in the METHODS sections below */
       Questions: ["Do you have a current referring provider your results can be sent to?",
       "Was your last screening more than 1 year ago from today?",
       "Are you having a new issue/problem with your breast today?(e.g., a lump in breast or nipple discharge).",
       "Have you had a dense breast ultrasound in the last year or in the past?"]
+      //Correct Sequence of Answers is: YES, YES, NO, NO
     }//RETURN
   },//DATA
   components:{
     Locations
-  },
+  },//COMPONENTS
   methods: {
-    showNextQuestion(i) {
+    showNextQuestion(i) { // --> Will continue to show next question if previous is correct 
       if(i==0){if(this.Answers[i]==''){return true;}}
       else if(i==1){if(this.Answers[0]=='Yes' && this.Answers[1]==''){ return true;}}
       else if(i==2){if(this.Answers[1]=='Yes' && this.Answers[2]==''){ return true;}}
       else if(i==3){if(this.Answers[2]=='No' && this.Answers[3]==''){ return true;}}
     },//SHOWNEXTQUESTION
-    showLocation(){
+    showLocation(){ // --> If there is an incorrect answer, it will display the Help view
       if(this.Answers[3]==this.Correct[3]) {this.ShowPicker = 1 }
       else if(this.Answers[0]!=this.Correct[0] && this.Answers[0] != '') {this.$router.push({path: '/Help'})}
       else if(this.Answers[1]!=this.Correct[1] && this.Answers[1] != '') {this.$router.push({path: '/Help'})}
